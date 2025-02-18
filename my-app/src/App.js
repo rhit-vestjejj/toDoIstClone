@@ -15,6 +15,44 @@ function App() {
   });
   const [isLoading, setIsLoading] = useState(true);
 
+  function getDataFromDays() {
+    let cvsrows = [];
+    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    const header = "Day,TaskDone,TaskNotDone";
+    cvsrows.push(header);
+    
+    daysOfWeek.forEach(day => {
+      let totalTasks = days[day].length; 
+      let doneTasks = 0;
+
+      for (let i = 0; i < days[day].length; i++) {
+          if (days[day][i]['completed'] === true) {
+              doneTasks++;
+          }
+      }
+
+      cvsrows.push(`${day},${doneTasks},${totalTasks - doneTasks}`);
+    });
+    
+
+    const csvContent = cvsrows.join('\n');
+
+    // Create a Blob and trigger download
+    const blob = new Blob([csvContent], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "tasks.csv";  // Name of the file
+    document.body.appendChild(a);
+    a.click();
+    
+    // Cleanup
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   useEffect(() => {
     const loadTasks = async () => {
       try {
@@ -177,6 +215,9 @@ function App() {
             <Day day="Sunday" />
           </div>
         </div>
+        <button onClick = {() => getDataFromDays()} style = {{
+          color: 'red',
+        }}>Testing</button>
       </header>
     </div>
   );
