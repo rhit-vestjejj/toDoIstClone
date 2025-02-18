@@ -11,6 +11,11 @@ body {
   margin-top: 5%;
 }
 
+.days {
+  background-color: rgb(189, 189, 189);
+  font-size: 35px;
+}
+
 .row2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -18,6 +23,11 @@ body {
   margin-left: 18%;
   margin-right: 18%;
   margin-top: 5%;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 45px;
 }
 
 .container {
