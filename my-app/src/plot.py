@@ -4,15 +4,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.animation as animation
 
-#Test case
-data = {
-    "Day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "Tasks_Done": [5, 7, 8, 6, 9, 4, 3],
-    "Tasks_Not_Done": [2, 1, 3, 2, 1, 5, 6]
-}
 
 
-df_todo = pd.DataFrame(data)
+df_todo = pd.read_csv("C:\\Users\\glazedh\\vs-workspace\\toDoIstClone\\my-app\\src\\tasks.csv")
+
 
 
 days_ordered = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
