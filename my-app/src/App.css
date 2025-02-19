@@ -2,13 +2,10 @@ body {
   background-color: black;
 }
 
-.row1 {
+.mainDivider {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 2%;
-  margin-left: 7%;
-  margin-right: 7%;
-  margin-top: 5%;
 }
 
 .days {
@@ -16,18 +13,74 @@ body {
   font-size: 35px;
 }
 
+span {
+  color: rgb(37, 37, 37);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.row1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 5%;
+}
+
 .row2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3%;
-  margin-left: 18%;
-  margin-right: 18%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 5%;
+}
+
+.row3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 5%;
+}
+
+.row4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
   margin-top: 5%;
 }
 
 h2 {
   font-weight: normal;
   font-size: 45px;
+}
+
+.addTask {
+  width: 95%;
+  border: 0px solid black;
+  background-color: rgb(189, 189, 189);
+  height: 50px;
+  font-size: 20px;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+textarea {
+  resize:vertical;
+}
+
+.addTask:focus {
+  border: 0px solid black;
+  outline-width: 0px;
 }
 
 .container {
@@ -76,4 +129,5 @@ h1 {
   margin-left: 10px;
   color: rgb(37, 37, 37);
   font-size: 20px;
+  background-color: rgb(189, 189, 189);
 }
